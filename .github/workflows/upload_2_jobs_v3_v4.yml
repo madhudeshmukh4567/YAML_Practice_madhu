@@ -25,7 +25,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: homework
-      - shell: bash
+         shell: bash
         run: |
           value=`cat math-homework.txt`
           expr $value \* 9 > math-homework.txt
