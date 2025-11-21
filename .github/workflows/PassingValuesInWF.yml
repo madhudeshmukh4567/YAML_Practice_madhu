@@ -1,0 +1,24 @@
+name: "Workflow for Passing values in between jobs -- job1 to job2"
+on: [workflow_dispatch]
+jobs:
+  job1:
+    runs-on: windows-latest
+
+    # Map a step output to a job output
+
+    outputs:
+
+      output1: ${{ steps.step1.outputs.test }}
+
+      output2: ${{ steps.step2.outputs.test }}
+
+    steps:
+
+      - id: step1
+
+        run: echo "::set-output name=test::ImportantValue1"
+
+      - id: step2
+
+        run: echo "::set-output name=test::ImportantValue2"
+ 
