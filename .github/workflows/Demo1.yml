@@ -5,4 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - run: echo "Welcome to Github Action using YAML"
+        - run: echo "Current OS is ${{runner.os}} "
+        - run: echo "Github Event Name is ${{github.event_name}} "
+        - run: pwd
+        - run: ls ~
+        - run: ls ${{github.workspace}}
+        
         
